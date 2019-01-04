@@ -5,3 +5,5 @@
 /logs/*
 /www/**
 .DS_Store
+.env
+.idea/

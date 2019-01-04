@@ -2,17 +2,19 @@ version: "3"
 
 services:
   webserver:
+    #env_file:
+    #  - sample.env
     build: 
       context: ./bin/webserver
     container_name: '7.2.x-webserver'
     restart: 'always'
     ports:
-      - "80:80"
-      - "443:443"
+      - ${PORT80-80}:80
+      - ${PORT443-443}:443
     links: 
       - mysql
     volumes: 
-      - ${DOCUMENT_ROOT-./www}:/var/www/html
+      - ${DOCUMENT_ROOT}:/var/www/html
       - ${PHP_INI-./config/php/php.ini}:/usr/local/etc/php/php.ini
       - ${VHOSTS_DIR-./config/vhosts}:/etc/apache2/sites-enabled
       - ${LOG_DIR-./logs/apache2}:/var/log/apache2
@@ -36,7 +38,7 @@ services:
       PMA_HOST: mysql
       PMA_PORT: 3306
     ports:
-      - '8080:80'
+      - ${PORTPHPADMNIN80-8080}:80
     volumes: 
       - /sessions
   redis:
