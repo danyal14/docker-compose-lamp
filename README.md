@@ -7,12 +7,20 @@ This is a basic LAMP stack environment built using Docker Compose. It consists f
 * MySQL 5.7
 * phpMyAdmin
 
+## Personal local settings
+.env to change for setup
+
+    DOCUMENT_ROOT=~/projects/dDev/apps/myproject/
+    PORT80=8089
+    PORT443=8443
+    PORTPHPADMNIN80=8090
+    
 ## Installation
 
 Clone this repository on your local computer and switch to branch `7.2.x`. Run the `docker-compose up -d`.
 
 ```shell
-git clone https://github.com/sprintcube/docker-compose-lamp.git
+git clone https://github.com/danyal14/docker-compose-lamp.git
 cd docker-compose-lamp/
 git fetch --all
 git checkout 7.2.x
@@ -98,11 +106,14 @@ By default following extensions are installed.
 > If you want to install more extension, just update `./bin/webserver/Dockerfile`. You can also generate a PR and we will merge if seems good for general purpose.
 > You have to rebuild the docker image by running `docker-compose build` and restart the docker containers.
 
-## phpMyAdmin
+## Application 
 
+http://localhost:8089
+
+## phpMyAdmin
 phpMyAdmin is configured to run on port 8080. Use following default credentials.
 
-http://localhost:8080/  
+http://localhost:8090/  
 username: root  
 password: tiger
 
