@@ -1,5 +1,7 @@
 # LAMP stack built with Docker Compose
 
+This is a forked project, additional changes are made to .env and docker-compose.yml
+
 ![Landing Page](https://preview.ibb.co/gOTa0y/LAMP_STACK.png)
 
 This is a basic LAMP stack environment built using Docker Compose. It consists following:
@@ -31,3 +33,10 @@ Your LAMP stack is now ready!! You can access it via `http://localhost`.
 ## Configuration and Usage
 
 Please read from appropriate version branch.
+
+## .env to change for setup
+
+    DOCUMENT_ROOT=~/projects/dDev/apps/myproject/
+    PORT80=8089
+    PORT443=8443
+    PORTPHPADMNIN80=8090
